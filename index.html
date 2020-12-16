@@ -8,7 +8,6 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <link rel="stylesheet" href="css/leaflet.css">
         <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
-        <link rel="stylesheet" href="css/leaflet-search.css">
         <link rel="stylesheet" href="css/leaflet-control-geocoder.Geocoder.css">
         <style>
         html, body, #map {
@@ -33,8 +32,7 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
-        <script src="js/leaflet-search.js"></script>
-        <script src="data/DekalbCountyPrecinctTurnout_1.js"></script>
+        <script src="data/Nov2020GeneralElectionTurnout_1.js"></script>
         <script src="data/EarlyInPersonVotingLocations_2.js"></script>
         <script>
         var highlightLayer;
@@ -74,7 +72,7 @@
         });
         layer_ESRIGraydark_0;
         map.addLayer(layer_ESRIGraydark_0);
-        function pop_DekalbCountyPrecinctTurnout_1(feature, layer) {
+        function pop_Nov2020GeneralElectionTurnout_1(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -146,10 +144,10 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_DekalbCountyPrecinctTurnout_1_0(feature) {
+        function style_Nov2020GeneralElectionTurnout_1_0(feature) {
             if (feature.properties['dkb-turn_8'] >= 23.919598 && feature.properties['dkb-turn_8'] <= 59.000000 ) {
                 return {
-                pane: 'pane_DekalbCountyPrecinctTurnout_1',
+                pane: 'pane_Nov2020GeneralElectionTurnout_1',
                 opacity: 1,
                 color: 'rgba(111,192,246,0.564)',
                 dashArray: '',
@@ -164,7 +162,7 @@
             }
             if (feature.properties['dkb-turn_8'] >= 59.000000 && feature.properties['dkb-turn_8'] <= 76.990000 ) {
                 return {
-                pane: 'pane_DekalbCountyPrecinctTurnout_1',
+                pane: 'pane_Nov2020GeneralElectionTurnout_1',
                 opacity: 1,
                 color: 'rgba(111,192,246,0.564)',
                 dashArray: '',
@@ -179,7 +177,7 @@
             }
             if (feature.properties['dkb-turn_8'] >= 76.990000 && feature.properties['dkb-turn_8'] <= 89.250000 ) {
                 return {
-                pane: 'pane_DekalbCountyPrecinctTurnout_1',
+                pane: 'pane_Nov2020GeneralElectionTurnout_1',
                 opacity: 1,
                 color: 'rgba(111,192,246,0.564)',
                 dashArray: '',
@@ -193,20 +191,20 @@
             }
             }
         }
-        map.createPane('pane_DekalbCountyPrecinctTurnout_1');
-        map.getPane('pane_DekalbCountyPrecinctTurnout_1').style.zIndex = 401;
-        map.getPane('pane_DekalbCountyPrecinctTurnout_1').style['mix-blend-mode'] = 'normal';
-        var layer_DekalbCountyPrecinctTurnout_1 = new L.geoJson(json_DekalbCountyPrecinctTurnout_1, {
+        map.createPane('pane_Nov2020GeneralElectionTurnout_1');
+        map.getPane('pane_Nov2020GeneralElectionTurnout_1').style.zIndex = 401;
+        map.getPane('pane_Nov2020GeneralElectionTurnout_1').style['mix-blend-mode'] = 'normal';
+        var layer_Nov2020GeneralElectionTurnout_1 = new L.geoJson(json_Nov2020GeneralElectionTurnout_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_DekalbCountyPrecinctTurnout_1',
-            layerName: 'layer_DekalbCountyPrecinctTurnout_1',
-            pane: 'pane_DekalbCountyPrecinctTurnout_1',
-            onEachFeature: pop_DekalbCountyPrecinctTurnout_1,
-            style: style_DekalbCountyPrecinctTurnout_1_0,
+            dataVar: 'json_Nov2020GeneralElectionTurnout_1',
+            layerName: 'layer_Nov2020GeneralElectionTurnout_1',
+            pane: 'pane_Nov2020GeneralElectionTurnout_1',
+            onEachFeature: pop_Nov2020GeneralElectionTurnout_1,
+            style: style_Nov2020GeneralElectionTurnout_1_0,
         });
-        bounds_group.addLayer(layer_DekalbCountyPrecinctTurnout_1);
-        map.addLayer(layer_DekalbCountyPrecinctTurnout_1);
+        bounds_group.addLayer(layer_Nov2020GeneralElectionTurnout_1);
+        map.addLayer(layer_Nov2020GeneralElectionTurnout_1);
         function pop_EarlyInPersonVotingLocations_2(feature, layer) {
             layer.on({
                 mouseout: function(e) {
@@ -290,24 +288,17 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/EarlyInPersonVotingLocations_2.png" /> Early In-Person Voting Locations': layer_EarlyInPersonVotingLocations_2,'Dekalb County Precinct Turnout (%)<br /><table><tr><td style="text-align: center;"><img src="legend/DekalbCountyPrecinctTurnout_1_LowTurnout23590.png" /></td><td>Low Turnout (23 - 59%)</td></tr><tr><td style="text-align: center;"><img src="legend/DekalbCountyPrecinctTurnout_1_MediumTurnout59761.png" /></td><td>Medium Turnout (59 - 76%)</td></tr><tr><td style="text-align: center;"><img src="legend/DekalbCountyPrecinctTurnout_1_HighTurnout77892.png" /></td><td>High Turnout (77 - 89%)</td></tr></table>': layer_DekalbCountyPrecinctTurnout_1,"ESRI Gray (dark)": layer_ESRIGraydark_0,}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/EarlyInPersonVotingLocations_2.png" /> Early In-Person Voting Locations': layer_EarlyInPersonVotingLocations_2,'Nov. 2020 General Election Turnout (%)<br /><table><tr><td style="text-align: center;"><img src="legend/Nov2020GeneralElectionTurnout_1_LowTurnout23590.png" /></td><td>Low Turnout (23 - 59%)</td></tr><tr><td style="text-align: center;"><img src="legend/Nov2020GeneralElectionTurnout_1_MediumTurnout59761.png" /></td><td>Medium Turnout (59 - 76%)</td></tr><tr><td style="text-align: center;"><img src="legend/Nov2020GeneralElectionTurnout_1_HighTurnout77892.png" /></td><td>High Turnout (77 - 89%)</td></tr></table>': layer_Nov2020GeneralElectionTurnout_1,"ESRI Gray (dark)": layer_ESRIGraydark_0,}).addTo(map);
         setBounds();
-        map.addControl(new L.Control.Search({
-            layer: layer_DekalbCountyPrecinctTurnout_1,
-            initial: false,
-            hideMarkerOnCollapse: true,
-            propertyName: 'PRECINCT_I'}));
-        document.getElementsByClassName('search-button')[0].className +=
-         ' fa fa-binoculars';
-        resetLabels([layer_DekalbCountyPrecinctTurnout_1]);
+        resetLabels([layer_Nov2020GeneralElectionTurnout_1]);
         map.on("zoomend", function(){
-            resetLabels([layer_DekalbCountyPrecinctTurnout_1]);
+            resetLabels([layer_Nov2020GeneralElectionTurnout_1]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_DekalbCountyPrecinctTurnout_1]);
+            resetLabels([layer_Nov2020GeneralElectionTurnout_1]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_DekalbCountyPrecinctTurnout_1]);
+            resetLabels([layer_Nov2020GeneralElectionTurnout_1]);
         });
         </script>
     </body>
